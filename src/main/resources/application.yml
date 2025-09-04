@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+spring:
+  application:
+    name: rag-try
+  profiles:
+    active: dev
+
+# 日志配置
+logging:
+  level:
+    com.echo: INFO
+    org.springframework.web: INFO
+    dev.langchain4j: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+
+# Dify API配置
+dify:
+  api:
+    base-url: http://localhost/v1
+    api-key: app-jitbe3KStK9vjAauRMRpWSIC
+    timeout: 30
+    default-user: rag-try-user
+    debug: true
+
+# RAG增强服务配置
+rag:
+  ollama:
+    base-url: http://localhost:11434
+    embedding-model: nomic-embed-text
+    chat-model: qwen2:7b
+    timeout: 30
+  search:
+    similarity-threshold: 0.7
+    max-results: 5
+  async:
+    precompute-delay: 1000
+  knowledge:
+    base-path: knowledge
+    auto-reload: true
+
+# 智能路由配置
+smart-routing:
+  enabled: true
+  strategy: rag-first # rag-first, dify-first, parallel
+  fallback-enabled: true
+  timeout: 30
+

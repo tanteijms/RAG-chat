@@ -1,0 +1,24 @@
+{
+  "name": "rag-try-frontend",
+  "version": "1.0.0",
+  "description": "RAG-Try 智能客服系统前端",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "axios": "^1.6.0",
+    "element-plus": "^2.4.0",
+    "@element-plus/icons-vue": "^2.3.0",
+    "pinia": "^2.1.0",
+    "vue-router": "^4.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "vite": "^5.0.0",
+    "sass": "^1.69.0"
+  }
+}
